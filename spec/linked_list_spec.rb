@@ -65,16 +65,30 @@ RSpec.describe LinkedList do
     expect(list.to_string).to eq("dop plop suu")
     expect(list.count).to eq(3)
     list.insert(1, "woo")
-    binding.pry
-
+    
     expect(list.to_string).to eq("dop woo plop suu")
   end
   
-
-  
-
-
-
+  it "can instert node in list" do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("suu")
+    list.insert(1, "woo")
+    expect(list.to_string).to eq("doop woo suu")
+  end
+  it "can find a node" do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("suu")
+    list.append("deep")
+    list.append("woo")
+    list.append("blop")
+    
+    expect(list.find(2, 1)).to eq("deep")
+    expect(list.find(1, 3)).to eq("suu deep woo")
+    binding.pry
+  expect(list.to_string).to eq("doop suu deep woo blop")
+end
 
 
 end
