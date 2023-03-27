@@ -31,7 +31,7 @@ class LinkedList
       sounds = sounds + "#{current_node.data} "
       current_node = current_node.next_node
     end
-    sounds.rstrip
+    sounds.strip
     end
 
 
@@ -67,8 +67,16 @@ class LinkedList
     def find(index, lenght)
       found_sounds = ""
       current_node = @head
-    index.times
+    index.times do
+      current_node = current_node.next_node
     end
+    lenght.times do
+      found_sounds = found_sounds + " #{current_node.data}"
+      current_node = current_node.next_node
+    end
+    found_sounds.strip
+  end 
+    
   end
       
 
