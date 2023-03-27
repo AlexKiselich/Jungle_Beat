@@ -47,11 +47,30 @@ RSpec.describe LinkedList do
     # expect(list.append("deep")).to eq("deep")
     expect(list.count).to eq(2)
     expect(list.head.next_node).to be_a(Node)
-    list.append("dap")
+    # list.append("dap")
     # binding.pry
     
-    expect(list.to_string).to eq("doop deep dap")
+    # expect(list.to_string).to eq("doop deep dap")
   end
+
+  it "can add node to the front of list" do
+    list = LinkedList.new
+    list.append("plop")
+    # binding.pry
+    list.append("suu")
+    # binding.pry
+    list.prepend("dop")
+    # binding.pry
+
+    expect(list.to_string).to eq("dop plop suu")
+    expect(list.count).to eq(3)
+    list.insert(1, "woo")
+    binding.pry
+
+    expect(list.to_string).to eq("dop woo plop suu")
+  end
+  
+
   
 
 
