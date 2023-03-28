@@ -26,7 +26,6 @@ RSpec.describe JungleBeat do
   it "plays the sounds" do 
     jb = JungleBeat.new
     jb.append("deep doo ditt woo hoo shu")
-    # binding.pry
     jb.play
   end
 
