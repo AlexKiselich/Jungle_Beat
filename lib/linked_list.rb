@@ -62,8 +62,6 @@ class LinkedList
     end
 
 
-
-
     def find(index, lenght)
       found_sounds = ""
       current_node = @head
@@ -94,9 +92,7 @@ class LinkedList
         array.include?(sound)
     end
       
-    
-
-
+  
     def pop
      current_node = @head
      if current_node == nil
@@ -111,10 +107,6 @@ class LinkedList
       last_node.data
     end
   end
-
-
-    
-    
       
 end
 

@@ -22,7 +22,4 @@ class JungleBeat
     list.count
   end
 
-
-
-
 end
