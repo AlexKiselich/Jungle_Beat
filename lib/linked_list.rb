@@ -11,7 +11,7 @@ class LinkedList
       @head = Node.new(data)
     else
       current_node = @head
-      while current_node.next_node != nil
+      until current_node.next_node == nil
         current_node = current_node.next_node
       end
       current_node.next_node = Node.new(data)
@@ -69,16 +69,41 @@ class LinkedList
       current_node = @head
     index.times do
       current_node = current_node.next_node
-    end
-    lenght.times do
-      found_sounds = found_sounds + " #{current_node.data}"
-      current_node = current_node.next_node
-    end
+      end
+      lenght.times do
+        found_sounds = found_sounds + " #{current_node.data}"
+        current_node = current_node.next_node
+        end
     found_sounds.strip
-  end 
-    
-  end
+      end 
+    end
       
+
+    def includes?(sound)
+      array = []
+      current_node = @head 
+        if current_node == nil
+            return array
+        else 
+            while current_node.next_node != nil
+                array << current_node.data 
+                current_node = current_node.next_node
+            end
+            array << current_node.data 
+        end
+        array.include?(sound)
+    end
+      
+    
+
+
+
+    
+    
+      
+       
+    
+
 
 
 
