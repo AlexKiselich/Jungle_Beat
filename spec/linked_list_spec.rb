@@ -95,9 +95,19 @@ RSpec.describe LinkedList do
     list.append("deep")
     list.append("suu")
     list.append("doop")
+    expect(list.includes?("doop")).to eq(true)
+  end
+  
+  it "removes last node in list" do 
+    list = LinkedList.new
+    list.append("deep")
+    list.append("suu")
+    list.append("doop")
     binding.pry
-  expect(list.includes?("doop")).to eq(true)
-end
+    expect(list.pop).to eq("doop")
+    list.pop
+    expect(list.to_string).to eq("deep")
+  end
 
 
 end
