@@ -25,10 +25,9 @@ RSpec.describe LinkedList do
     list.append("doop")
     expect(list).to be_a(LinkedList)
     expect(list.head.next_node).to eq(nil)
-    # binding.pry
   end
   
-  it "can count nodes" do
+  it "can count" do
     list = LinkedList.new
     list.append("doop")
     expect(list.head.next_node).to eq(nil)
@@ -39,28 +38,19 @@ RSpec.describe LinkedList do
   it "can count mutliple nodes" do
     list = LinkedList.new
     list.append("doop")
-    # binding.pry
     expect(list.head).to be_a(Node)
     expect(list.head.next_node).to eq(nil)
     list.append("deep")
-    # binding.pry
-    # expect(list.append("deep")).to eq("deep")
     expect(list.count).to eq(2)
     expect(list.head.next_node).to be_a(Node)
-    # list.append("dap")
-    # binding.pry
     
-    # expect(list.to_string).to eq("doop deep dap")
   end
 
-  it "can add node to the front of list" do
+  it "adds a prepend method" do
     list = LinkedList.new
     list.append("plop")
-    # binding.pry
     list.append("suu")
-    # binding.pry
     list.prepend("dop")
-    # binding.pry
 
     expect(list.to_string).to eq("dop plop suu")
     expect(list.count).to eq(3)
@@ -96,14 +86,14 @@ RSpec.describe LinkedList do
     list.append("suu")
     list.append("doop")
     expect(list.includes?("doop")).to eq(true)
+    expect(list.includes?("duu")).to eq(false)
   end
   
-  it "removes last node in list" do 
+  it "removes last node in list with pop method" do 
     list = LinkedList.new
     list.append("deep")
     list.append("suu")
     list.append("doop")
-    binding.pry
     expect(list.pop).to eq("doop")
     list.pop
     expect(list.to_string).to eq("deep")
