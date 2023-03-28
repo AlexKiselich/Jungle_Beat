@@ -14,6 +14,10 @@ class JungleBeat
     sounds 
   end
 
+  def play
+    `say -r 100 -v Boing #{list.to_string}`
+  end
+
 
 
 
