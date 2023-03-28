@@ -18,6 +18,10 @@ class JungleBeat
     `say -r 100 -v Boing #{list.to_string}`
   end
 
+  def count
+    list.count
+  end
+
 
 
 
