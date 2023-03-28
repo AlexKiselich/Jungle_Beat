@@ -97,20 +97,26 @@ class LinkedList
     
 
 
+    def pop
+     current_node = @head
+     if current_node == nil
+      return "No Nodes"
+     else
+      current_node = @head
+      until current_node.next_node.next_node == nil
+        current_node = current_node.next_node
+      end
+      last_node = current_node.next_node
+      current_node.next_node = nil
+      last_node.data
+    end
+  end
+
 
     
     
       
-       
-    
-
-
-
-
-
-
-
- end
+end
 
 
 
